@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>病理侦探：你能看见疾病吗？</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+<div class="museum">
+  <header>
+    <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark">⊕</span><span>可见之境<small>THE PATHOLOGY OBSERVATORY</small></span></a>
+    <div class="header-note">病理侦探任务 · 约 5 分钟</div>
+    <button class="quiet" id="sources">素材说明</button><button class="quiet" id="fullscreen">全屏 ↗</button>
+  </header>
+  <section class="mission-hud" aria-label="任务状态"><span>当前时代 <strong id="era-name">任务待开启</strong></span><span>已发现 <strong id="clue-count">0 / 16</strong></span><label>可见度 <strong id="visibility-value">10%</strong><progress id="visibility" max="100" value="10" aria-label="游戏可见度"></progress></label><small>游戏进度，非诊断指标</small></section>
+  <nav aria-label="观察阶段" id="timeline"></nav>
+  <main id="stage" tabindex="-1"></main>
+  <footer><span id="footnote">从化学染色到虚拟染色：病理学是怎样一步步“看见”疾病的</span><span>观察 · 操作 · 发现</span></footer>
+</div>
+<dialog id="viewer"><button class="close" aria-label="关闭图片">×</button><img alt=""><p></p></dialog>
+<dialog id="source-dialog"><button class="close" aria-label="关闭素材说明">×</button><h2>展品与示意的边界</h2><p>内容依据当前文件夹的医学史 DOCX 与《virtual_staining(1).pptx》，已检查全部 39 张 JPG。图片保留原文件，不推断未注明的病例、靶标或诊断。</p><ul><li>肉眼时代：2-3 历史解剖图。热点仅提示图中轮廓与层次，不代表病灶；不是病变照片。</li><li>显微与染色：7-1 制片设备、8-2 组织图。低对比画面由同一张已染色图做视觉处理，绝非未染色原图。</li><li>分子与数字：10-2 多色组织图，仅作标记成像背景；不指定抗体和阳性含义。11-2 为扫描设备图。</li><li>AI：12-1 已有技术流程图、12-2 论文截图。保留原图标签，动画只说明输入、计算、预测与验证。</li><li>13-2 包含训练／推理与分类标签，未将其误作配对虚拟染色结果；其余未使用图片也不被拼接成前后对照。</li></ul><p>各阶段选用不同展品，不能视为同一患者或同一样本的连续检查。原图可点击放大；更完整的核对记录见 README.md。</p></dialog>
+<div class="sr-only" id="announce" aria-live="polite"></div>
+</body>
+</html>
